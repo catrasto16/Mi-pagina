@@ -12,7 +12,7 @@
 /* Estilos globales */
 html, body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: var(--tercer-color);
     margin: 0;
     padding: 5px;
     height: 100%;
@@ -41,7 +41,7 @@ h1, h2 {
 }
 
 h1 {
-    color: #333;
+    color: var(--text-dark);
 }
 
 h2 {
@@ -85,7 +85,7 @@ nav {
     background: none;
     border: none;
     font-size: 40px;
-    color: var(--text-light);
+    color: var(--text-dark);
     cursor: pointer;
 }
 
@@ -130,7 +130,7 @@ nav {
 
     .menu.active a {
         font-size: 2rem;
-        color: #333;
+        color: #fff;
         padding: 20px;
         text-align: center;
         text-decoration: none;
@@ -172,8 +172,8 @@ nav {
 
 /* Estilos para el footer y botones */
 footer {
-    /*background-color: var(--tercer-color);*/
-    color: var(--text-dark);
+    background-color: var(--tercer-color);
+    color: var(--text-light);
     text-align: center;
     padding: 15px 10px;
     width: 100%;
