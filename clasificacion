@@ -1,0 +1,92 @@
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Liga</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Llena que nos vamos</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+		<nav>
+			<ul class="menu">
+				<li><a href="inicio.html">Inicio</a></li>
+				<li><a href="resultados.html">Resultados</a></li>
+				<li><a href="clasificacion.html">Clasificación</a></li>
+				<li><a href="goleadores.html">Goleadores</a></li>
+			</ul>
+		</nav>
+    </header>
+	<main>
+	<!-- Tabla de clasificación -->
+    <h2>Clasificación</h2>
+    <table id="clasi-table">
+        <thead>
+            <tr>
+                <th>Jugador</th>
+                <th>Puntos</th>
+                <th>PG</th>
+                <th>PE</th>
+                <th>PP</th>
+                <th>Amarillas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos de la clasificación se llenarán dinámicamente aquí -->
+        </tbody>
+    </table>
+	</main>
+	<!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Llena que nos vamos. Todos los derechos reservados.</p>
+    </footer>
+	
+	<!-- Script paraa llenar la tabla dinamicamente -->
+	<script>
+		const topClasi = [
+            { nombre: "Juan Tovar", puntos: 24, PG: 8, PE: 0, PP: 1, amarillas: 0 },
+            { nombre: "Catrasto", puntos: 21, PG: 7, PE: 0, PP: 1, amarillas: 0 },
+            { nombre: "Pedro Gemelo", puntos: 18, PG: 6, PE: 0, PP: 2, amarillas: 1 },
+            { nombre: "Floris", puntos: 18, PG: 6, PE: 0, PP: 3, amarillas: 0 },
+            { nombre: "Juan López", puntos: 15, PG: 5, PE: 0, PP: 3, amarillas: 0 },
+            { nombre: "Jose Gemelo", puntos: 15, PG: 5, PE: 0, PP: 4, amarillas: 0 },
+            { nombre: "Juanma", puntos: 12, PG: 4, PE: 0, PP: 5, amarillas: 1 },
+            { nombre: "Clarico", puntos: 9, PG: 3, PE: 0, PP: 3, amarillas: 0 },
+            { nombre: "Jose Ángel", puntos: 9, PG: 3, PE: 0, PP: 4, amarillas: 1 },
+            { nombre: "Puro", puntos: 9, PG: 3, PE: 0, PP: 6, amarillas: 0 },
+            { nombre: "Ortega", puntos: 9, PG: 3, PE: 0, PP: 7, amarillas: 2 },
+            { nombre: "Mateo Maldonado", puntos: 6, PG: 2, PE: 0, PP: 0, amarillas: 0 },
+            { nombre: "Maño", puntos: 6, PG: 2, PE: 0, PP: 5, amarillas: 0 },
+            { nombre: "Jesús Maldonado", puntos: 6, PG: 2, PE: 0, PP: 6, amarillas: 1 },
+            { nombre: "Juan Carlos", puntos: 6, PG: 2, PE: 0, PP: 8, amarillas: 0 },
+            { nombre: "Pedrín", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 },
+            { nombre: "Villegas", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 },
+            { nombre: "Carlos Gamez", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 },
+            { nombre: "Andrés", puntos: 0, PG: 0, PE: 0, PP: 1, amarillas: 0 }    
+        ];
+		
+		const tableBody = document.querySelector("#clasi-table tbody");
+		
+		// Llenar dinamicamente la Tabla
+		topClasi.forEach(jugador => {
+			const row = document.createElement("tr");
+			row.innerHTML = `
+				<td>${jugador.nombre}</td>
+                <td>${jugador.puntos}</td>
+                <td>${jugador.PG}</td>
+                <td>${jugador.PE}</td>
+                <td>${jugador.PP}</td>
+                <td>${jugador.amarillas}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+    <script src="scripts.js"></script>	
+</body>
+</html>
+	
+			
+    
