@@ -1,0 +1,84 @@
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Liga</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Llena que nos vamos</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+		<nav>
+			<ul class="menu">
+				<li><a href="inicio.html">Inicio</a></li>
+				<li><a href="resultados.html">Resultados</a></li>
+				<li><a href="clasificacion.html">Clasificación</a></li>
+				<li><a href="goleadores.html">Goleadores</a></li>
+			</ul>
+		</nav>
+    </header>
+	
+	<main>
+		<!-- Tabla de goleadores -->
+		<h2>Tabla de Goleadores</h2>
+		<table id="scorers-table">
+			<thead>
+				<tr>
+					<th>Jugador</th>
+					<th>Goles</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Los datos de los goleadores se llenarán dinámicamente aquí -->
+			</tbody>
+		</table>
+	</main>
+	
+	<!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Llena que nos vamos. Todos los derechos reservados.</p>
+    </footer>
+
+	<!-- Script para llenar dinámicamente la tabla -->
+    <script>
+        // Datos de los goleadores
+	const topScorers = [
+            { nombre: "Juan Tovar", goles: 32 },
+            { nombre: "Jose Gemelo", goles: 29 },
+            { nombre: "Juan Carlos", goles: 28 },
+            { nombre: "Juan López", goles: 27 },
+            { nombre: "Pedro Gemelo", goles: 16 },
+            { nombre: "Floris", goles: 16 },
+            { nombre: "Juanma", goles: 14 },
+            { nombre: "Puro", goles: 13 },
+            { nombre: "Ortega", goles: 12 },
+            { nombre: "Catrasto", goles: 9 },
+            { nombre: "Maño", goles: 5 },
+            { nombre: "Jose Ángel", goles: 4 },
+            { nombre: "Clarico", goles: 3 },
+            { nombre: "Pedrín", goles: 3 },
+            { nombre: "Villegas", goles: 3 },
+            { nombre: "Jesús Maldonado", goles: 2 },
+            { nombre: "Carlos Gámez", goles: 2 },
+            { nombre: "Mateo Maldonado", goles: 2 },
+            // Agrega más goleadores aquí
+        ];
+		// Seleccionar el cuerpo de la tabla
+        const tableBody = document.querySelector("#scorers-table tbody");
+
+        // Llenar la tabla dinámicamente
+        topScorers.forEach(jugador => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${jugador.nombre}</td>
+                <td>${jugador.goles}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
