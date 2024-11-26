@@ -172,8 +172,8 @@ nav {
 
 /* Estilos para el footer y botones */
 footer {
-    background-color: var(--tercer-color);
-    color: var(--text-light);
+    background-color: white;
+    color: var(--text-dark);
     text-align: center;
     padding: 15px 10px;
     width: 100%;
