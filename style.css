@@ -5,7 +5,7 @@
     --tercer-color: white;
     --hover-color: #575757;
     --bg-color: #f4f4f4;
-    --text-light: #333;
+    --text-light: white;
     --text-dark: #333;
 }
 
@@ -45,12 +45,12 @@ h1 {
 }
 
 h2 {
-    color: #333;
+    color: var(--text-dark);
 }
 
 /* Menú de navegación */
 nav {
-    background-color: white;
+    background-color: var(--primary-color);
 }
 
 .menu {
@@ -67,7 +67,7 @@ nav {
 
 .menu a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-light);
     font-weight: bold;
     padding: 10px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -172,8 +172,8 @@ nav {
 
 /* Estilos para el footer y botones */
 footer {
-    background-color: var(--tercer-color);
-    color: var(--text-light);
+    /*background-color: var(--tercer-color);*/
+    color: var(--text-dark);
     text-align: center;
     padding: 15px 10px;
     width: 100%;
