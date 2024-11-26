@@ -1,0 +1,243 @@
+/* Variables para colores y tamaños */
+:root {
+    --primary-color: #333;
+    --secondary-color: #4CAF50;
+    --tercer-color: gray;
+    --hover-color: #575757;
+    --bg-color: #f4f4f4;
+    --text-light: white;
+    --text-dark: #333;
+}
+
+/* Estilos globales */
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: var(--tercer-color);
+    margin: 0;
+    padding: 5px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: left;
+}
+
+h1 {
+    color: var(--text-light);
+}
+
+h2 {
+    color: var(--text-dark);
+}
+
+/* Menú de navegación */
+nav {
+    background-color: var(--primary-color);
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: var(--hover-color);
+    color: var(--text-light);
+    border-radius: 5px;
+}
+
+/* Estilo del botón de menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.menu-toggle {
+    font-size: 50px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    display: block;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Menú hamburguesa (pantallas pequeñas) */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu.active a {
+        font-size: 2rem;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .menu.active li {
+        margin: 20px 0;
+    }
+
+    .menu.active a:hover {
+        color: #ff9800;
+        text-decoration: underline;
+    }
+
+/* Menú visible en pantallas grandes */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .menu.active a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Estilos para el footer y botones */
+footer {
+    background-color: var(--tercer-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+
+.buttons {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de tablas */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    table-layout: auto;
+}
+
+th, td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo de imágenes */
+.imagen-foto {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
