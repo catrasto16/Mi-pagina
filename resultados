@@ -1,0 +1,196 @@
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Liga</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Llena que nos vamos</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+		<nav>
+			<ul class="menu">
+				<li><a href="inicio.html">Inicio</a></li>
+				<li><a href="resultados.html">Resultados</a></li>
+				<li><a href="clasificacion.html">Clasificación</a></li>
+				<li><a href="goleadores.html">Goleadores</a></li>
+			</ul>
+		</nav>
+    </header>
+    <main>
+	<h2>Resultados 2024/2025</h2>
+
+    <div id="match-container"></div>
+
+    <div class="buttons">
+        <button onclick="previousMatch()">Anterior</button>
+        <button onclick="nextMatch()">Siguiente</button>
+    </div>
+	<script>
+        const matches = [
+            {
+                jornada: "Jornada 1",
+                fecha: "11/09/2024",
+                arbitro: "Pedrín",
+                equipoNegro: ["Juan Carlos I", "Juan Tovar IIIIII", "Puro III", "Juanma IIII", "Juan López IIII", "Clarico II"],
+                equipoRojo: ["Andrés", "Pedro Gemelo I", "Floris IIII", "Jose Ángel", "José II", "Villegas", "Jesús"],
+                resultado: "20 - 7"
+            },
+            {
+                jornada: "Jornada 2",
+                fecha: "18/09/2024",
+                arbitro: "Maño",
+                equipoNegro: ["Pedrín II", "Juan Tovar IIII", "Floris I", "Juan López IIIII", "Ortega", "Villegas III", "Catrasto"],
+                equipoRojo: ["Carlos II", "Juan Carlos II", "Jose Gemelo III", "Puro", "Jose Ángel", "Jesús I"],
+                resultado: "15 - 8"
+            },
+            {
+                jornada: "Jornada 3",
+                fecha: "25/09/2024",
+                arbitro: "J.López",
+                equipoNegro: ["Floris I", "Juan Carlos IIIIII", "Pedrín I", "Juanma I", "Ortega III", "Jesús"],
+                equipoRojo: ["Puro III", "Jose Gemelo IIIIII", "Pedro Gemelo II", "Jose Ángel", "Clarico", "Catrasto", "Juan Tovar II"],
+                resultado: "12 - 13"
+            },
+            {
+                jornada: "Jornada 4",
+                fecha: "2/10/2024",
+                arbitro: "Catrasto",
+                equipoNegro: ["Ortega", "Floris", "Juan Carlos III", "Maño I", "Pedro Gemelo III", "Jose Ángel II"],
+                equipoRojo: ["Jesús I", "Juan Tovar I", "Jose Gemelo I", "Puro I", "Juan López III", "Clarico", "Juanma"],
+                resultado: "9 - 7"
+            },
+            {
+                jornada: "Jornada 5",
+                fecha: "9/10/2024",
+                arbitro: "J.Ángel",
+                equipoNegro: ["Pedro Gemelo II", "Juan Tovar IIIIIII", "Floris I", "Jose Gemelo I", "Juanma I", "Catrasto", "Clarico I"],
+                equipoRojo: ["Juan López I", "Juan Carlos IIII", "Puro", "Maño", "Ortega I", "Jesus"],
+                resultado: "13 - 6"
+            },
+            {
+                jornada: "Jornada 6",
+                fecha: "16/10/2024",
+                arbitro: "Jesús",
+                equipoNegro: ["Juan Tovar IIII", "Floris IIII", "Pedro Gemelo IIII", "Juanma II", "Catrasto I"],
+                equipoRojo: ["Juan Carlos III", "Jose Gemelo IIIIII", "Maño", "Ortega I", "Clarico"],
+                resultado: "15 - 10"
+            },
+            {
+                jornada: "Jornada 7",
+                fecha: "23/10/2024",
+                arbitro: "P. Gemelo",
+                equipoNegro: ["Juan Tovar III", "Jose Gemelo IIII", "Juan López IIIII", "Catrasto III", "Jose Ángel"],
+                equipoRojo: ["Juan Carlos IIII", "Maño II", "Puro I", "Juanma III", "Ortega I"],
+                resultado: "15 - 11"
+            },
+            {
+                jornada: "Jornada 8",
+                fecha: "30/10/2024",
+                arbitro: "Sin Árbitro",
+                equipoNegro: ["Juanma III", "Juan Carlos", "Puro III", "Pedro Gemelo III", "Jose Ángel I", "Catrasto I"],
+                equipoRojo: ["Jose Gemelo IIII", "Floris III", "Maño II", "Juan López IIII", "Ortega II", "Jesús"],
+                resultado: "11 - 15"
+            },
+            {
+                jornada: "Jornada 9",
+                fecha: "06/11/2024",
+                arbitro: "C.Gámez",
+                equipoNegro: ["Mateo I", "Juan Tovar IIII", "Jose Gemelo I", "Juan López II", "Pedro Gemelo", "Juanma", "Jesús", "Catrasto I"],
+                equipoRojo: ["Puro I", "Juan Carlos III", "Floris", "Maño", "Jose Ángel I", "Ortega II", "Clarico"],
+                resultado: "9 - 7"
+            },
+            {
+                jornada: "Jornada 10",
+                fecha: "21/11/2024",
+                arbitro: "Clarico",
+                equipoNegro: ["Catrasto III", "Juan Tovar I", "Floris II", "Pedro Gemelo I", "Puro I", "Mateo I", "Carlos"],
+                equipoRojo: ["Ortega", "Juan Carlos II", "Jose Gemelo III", "Maño", "Juan López III", "Juanma", "Jesus"],
+                resultado: "9 - 8"
+            }
+
+            // Puedes agregar más partidos aquí
+        ];
+		// Añadir +1 para que se vea la ultima jornada jugada //
+        let currentMatchIndex = 9;
+
+        function displayMatch() {
+            const match = matches[currentMatchIndex];
+            const matchContainer = document.getElementById("match-container");
+            matchContainer.innerHTML = `
+                <div class="match-header">
+                    ${match.jornada} - ${match.fecha} - Árbitro: ${match.arbitro}
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Equipo Negro</th>
+                            <th>Resultado</th>
+                            <th>Equipo Rojo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${match.equipoNegro.join("<br>")}</td> 
+                            <td>${match.resultado}</td>
+                            <td>${match.equipoRojo.join("<br>")}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+
+            displayClasificacion();
+            displayGoleadores();
+        }
+
+        function displayClasificacion() {
+            const clasiTableBody = document.getElementById("clasi-table").getElementsByTagName('tbody')[0];
+            clasiTableBody.innerHTML = "";
+
+            topClasi.forEach(jugador => {
+                const row = clasiTableBody.insertRow();
+                row.insertCell(0).textContent = jugador.nombre;
+                row.insertCell(1).textContent = jugador.puntos;
+                row.insertCell(2).textContent = jugador.PG;
+                row.insertCell(3).textContent = jugador.PE;
+                row.insertCell(4).textContent = jugador.PP;
+                row.insertCell(5).textContent = jugador.amarillas;
+            });
+        }
+
+        function displayGoleadores() {
+            const scorersTableBody = document.getElementById("scorers-table").getElementsByTagName('tbody')[0];
+            scorersTableBody.innerHTML = "";
+
+            topScorers.forEach(jugador => {
+                const row = scorersTableBody.insertRow();
+                row.insertCell(0).textContent = jugador.nombre;
+                row.insertCell(1).textContent = jugador.goles;
+            });
+        }
+
+        function nextMatch() {
+            currentMatchIndex = (currentMatchIndex + 1) % matches.length;
+            displayMatch();
+        }
+
+        function previousMatch() {
+            currentMatchIndex = (currentMatchIndex - 1 + matches.length) % matches.length;
+            displayMatch();
+        }
+
+        // Inicializar la pantalla mostrando el primer partido
+        displayMatch();
+    </script>
+	</main>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Llena que nos vamos. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
