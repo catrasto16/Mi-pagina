@@ -12,7 +12,7 @@
 /* Estilos globales */
 html, body {
     font-family: Arial, sans-serif;
-    background-color: var(--tercer-color);
+    background-color: white;
     margin: 0;
     padding: 5px;
     height: 100%;
@@ -41,16 +41,16 @@ h1, h2 {
 }
 
 h1 {
-    color: var(--text-light);
+    color: #333;
 }
 
 h2 {
-    color: var(--text-dark);
+    color: #333;
 }
 
 /* Menú de navegación */
 nav {
-    background-color: var(--tercer-color);
+    background-color: white;
 }
 
 .menu {
@@ -67,7 +67,7 @@ nav {
 
 .menu a {
     text-decoration: none;
-    color: var(--text-light);
+    color: #333;
     font-weight: bold;
     padding: 10px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -130,7 +130,7 @@ nav {
 
     .menu.active a {
         font-size: 2rem;
-        color: #fff;
+        color: #333;
         padding: 20px;
         text-align: center;
         text-decoration: none;
