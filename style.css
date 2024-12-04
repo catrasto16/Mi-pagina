@@ -10,7 +10,7 @@
     --max-width: 1200px; /* Ancho máximo global para elementos principales */
 }
 
-/* Reset de margenes y padding */
+/* Reset de márgenes y padding global */
 *,
 *::before,
 *::after {
@@ -25,12 +25,7 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: var(--tercer-color);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+    margin: 0;
 }
 
 /* Contenedor principal */
@@ -38,7 +33,7 @@ main {
     width: 100%;
     max-width: var(--max-width);
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;  /* Reducido padding para móviles */
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -65,14 +60,14 @@ nav {
 }
 
 .menu li {
-    margin: 0 20px;
+    margin: 0 10px; /* Reducido margen para móviles */
 }
 
 .menu a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Reducido padding para móviles */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -92,20 +87,9 @@ nav {
     cursor: pointer;
 }
 
-/* Menú para pantallas grandes */
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        justify-content: center;
-        position: static;
-    }
-    .menu-toggle {
-        display: none;
-    }
-}
-
 /* Menú hamburguesa (pantallas pequeñas) */
 @media (max-width: 768px) {
+    /* Menú móvil */
     .menu {
         display: none;
         flex-direction: column;
@@ -120,6 +104,7 @@ nav {
         transition: all 0.3s ease-in-out;
     }
 
+    /* Menú visible al activar */
     .menu.active {
         display: flex;
     }
@@ -127,11 +112,46 @@ nav {
     .menu.active a {
         font-size: 2rem;
         padding: 20px;
+        color: #fff;
+        text-align: center;
     }
 
     .menu.active a:hover {
         color: #ff9800;
         text-decoration: underline;
+    }
+
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+        display: block;
+        font-size: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* Reducir padding en el contenedor principal */
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    /* Estilo de las tablas */
+    table {
+        width: 100%;
+        margin: 10px 0;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 0.8em; /* Reducido tamaño de fuente para móviles */
+    }
+
+    .imagen-foto {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -140,7 +160,7 @@ footer {
     background-color: var(--tercer-color);
     color: var(--text-dark);
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
 }
 
@@ -151,9 +171,9 @@ footer {
 }
 
 .buttons button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     margin: 5px;
-    font-size: 16px;
+    font-size: 14px; /* Reducido tamaño de fuente para móviles */
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -164,38 +184,4 @@ footer {
 
 .buttons button:hover {
     background-color: #45a049;
-}
-
-/* Tablas */
-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-    padding: 8px 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    font-size: 0.9em;
-}
-
-th {
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Imágenes */
-.imagen-foto {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }
