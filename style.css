@@ -1,4 +1,4 @@
-/* Variables para colores y tamaños */
+/* Variables */
 :root {
     --primary-color: #333;
     --secondary-color: #4CAF50;
@@ -7,16 +7,24 @@
     --bg-color: #f4f4f4;
     --text-light: white;
     --text-dark: #333;
+    --max-width: 1200px; /* Ancho máximo global para elementos principales */
 }
 
-/* Estilos globales */
+/* Reset de margenes y padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estructura global */
 html, body {
     font-family: Arial, sans-serif;
-    background-color: var(--tercer-color);
-    margin: 0;
-    padding: 0px;
     height: 100%;
     width: 100%;
+    background-color: var(--tercer-color);
 }
 
 body {
@@ -25,10 +33,11 @@ body {
     min-height: 100%;
 }
 
+/* Contenedor principal */
 main {
-    flex: 1;
-    max-width: 100%;
-    margin: auto;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 20px auto;
     padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
@@ -38,28 +47,21 @@ main {
 
 /* Títulos */
 h1, h2 {
+    color: var(--text-dark);
     text-align: left;
-}
-
-h1 {
-    color: var(--text-dark);
-}
-
-h2 {
-    color: var(--text-dark);
 }
 
 /* Menú de navegación */
 nav {
     background-color: var(--primary-color);
+    width: 100%;
 }
 
 .menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
+    padding: 0;
 }
 
 .menu li {
@@ -80,7 +82,7 @@ nav {
     border-radius: 5px;
 }
 
-/* Estilo del botón de menú hamburguesa */
+/* Menú hamburguesa (pantallas pequeñas) */
 .menu-toggle {
     display: none;
     background: none;
@@ -90,19 +92,13 @@ nav {
     cursor: pointer;
 }
 
-.menu-toggle {
-    font-size: 50px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #333;
-    display: block;
-    position: absolute;
-    right: -30px;
-    top: 15px;
-}
-
+/* Menú para pantallas grandes */
 @media (min-width: 768px) {
+    .menu {
+        display: flex;
+        justify-content: center;
+        position: static;
+    }
     .menu-toggle {
         display: none;
     }
@@ -113,7 +109,6 @@ nav {
     .menu {
         display: none;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         position: fixed;
         top: 0;
@@ -131,60 +126,25 @@ nav {
 
     .menu.active a {
         font-size: 2rem;
-        color: #fff;
         padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .menu.active li {
-        margin: 20px 0;
     }
 
     .menu.active a:hover {
         color: #ff9800;
         text-decoration: underline;
     }
-
-/* Menú visible en pantallas grandes */
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: static;
-        height: auto;
-        background-color: transparent;
-    }
-
-    .menu.active a {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-    .menu-toggle {
-        display: none;
-    }
 }
 
-/* Estilos para el footer y botones */
+/* Footer */
 footer {
-    background-color: white;
+    background-color: var(--tercer-color);
     color: var(--text-dark);
     text-align: center;
-    padding: 15px 10px;
+    padding: 20px;
     width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 1;
 }
 
-
-
+/* Botones */
 .buttons {
     text-align: center;
     margin: 15px 0;
@@ -206,17 +166,14 @@ footer {
     background-color: #45a049;
 }
 
-/* Estilos de tablas */
+/* Tablas */
 table {
     width: 100%;
-    max-width: 600px;
     margin: 20px auto;
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    table-layout: fixed;
 }
 
 th, td {
@@ -235,9 +192,9 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Estilo de imágenes */
+/* Imágenes */
 .imagen-foto {
-    width: auto;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
