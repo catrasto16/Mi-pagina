@@ -1,4 +1,4 @@
-/* Variables */
+/* Variables para colores y tamaños */
 :root {
     --primary-color: #333;
     --secondary-color: #4CAF50;
@@ -7,33 +7,28 @@
     --bg-color: #f4f4f4;
     --text-light: white;
     --text-dark: #333;
-    --max-width: 1200px; /* Ancho máximo global para elementos principales */
 }
 
-/* Reset de márgenes y padding global */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estructura global */
+/* Estilos globales */
 html, body {
     font-family: Arial, sans-serif;
-    height: 100%;
-    width: 100%;
     background-color: var(--tercer-color);
     margin: 0;
+    padding: 5px;
+    height: 100%;
 }
 
-/* Contenedor principal */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 main {
-    width: 100%;
-    max-width: var(--max-width);
+    flex: 1;
+    max-width: 800px;
     margin: 20px auto;
-    padding: 10px;  /* Reducido padding para móviles */
+    padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -42,32 +37,39 @@ main {
 
 /* Títulos */
 h1, h2 {
-    color: var(--text-dark);
     text-align: left;
+}
+
+h1 {
+    color: var(--text-light);
+}
+
+h2 {
+    color: var(--text-dark);
 }
 
 /* Menú de navegación */
 nav {
     background-color: var(--primary-color);
-    width: 100%;
 }
 
 .menu {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    padding: 0;
 }
 
 .menu li {
-    margin: 0 10px; /* Reducido margen para móviles */
+    margin: 0 20px;
 }
 
 .menu a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: bold;
-    padding: 8px 12px; /* Reducido padding para móviles */
+    padding: 10px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -77,22 +79,40 @@ nav {
     border-radius: 5px;
 }
 
-/* Menú hamburguesa (pantallas pequeñas) */
+/* Estilo del botón de menú hamburguesa */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     font-size: 40px;
-    color: var(--text-dark);
+    color: var(--text-light);
     cursor: pointer;
+}
+
+.menu-toggle {
+    font-size: 50px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    display: block;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* Menú hamburguesa (pantallas pequeñas) */
 @media (max-width: 768px) {
-    /* Menú móvil */
     .menu {
         display: none;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         position: fixed;
         top: 0;
@@ -104,16 +124,21 @@ nav {
         transition: all 0.3s ease-in-out;
     }
 
-    /* Menú visible al activar */
     .menu.active {
         display: flex;
     }
 
     .menu.active a {
         font-size: 2rem;
-        padding: 20px;
         color: #fff;
+        padding: 20px;
         text-align: center;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .menu.active li {
+        margin: 20px 0;
     }
 
     .menu.active a:hover {
@@ -121,59 +146,53 @@ nav {
         text-decoration: underline;
     }
 
-    /* Botón hamburguesa visible */
-    .menu-toggle {
-        display: block;
-        font-size: 50px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    /* Reducir padding en el contenedor principal */
-    main {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    /* Estilo de las tablas */
-    table {
-        width: 100%;
-        margin: 10px 0;
-        border-collapse: collapse;
-        background-color: #fff;
-    }
-
-    th, td {
-        padding: 6px;
-        font-size: 0.8em; /* Reducido tamaño de fuente para móviles */
-    }
-
-    .imagen-foto {
-        width: 100%;
+/* Menú visible en pantallas grandes */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
         height: auto;
+        background-color: transparent;
+    }
+
+    .menu.active a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: none;
     }
 }
 
-/* Footer */
+/* Estilos para el footer y botones */
 footer {
     background-color: var(--tercer-color);
-    color: var(--text-dark);
+    color: var(--text-light);
     text-align: center;
-    padding: 15px;
+    padding: 15px 10px;
     width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
 }
 
-/* Botones */
+
+
 .buttons {
     text-align: center;
     margin: 15px 0;
 }
 
 .buttons button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     margin: 5px;
-    font-size: 14px; /* Reducido tamaño de fuente para móviles */
+    font-size: 16px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -184,4 +203,41 @@ footer {
 
 .buttons button:hover {
     background-color: #45a049;
+}
+
+/* Estilos de tablas */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    table-layout: auto;
+}
+
+th, td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo de imágenes */
+.imagen-foto {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
