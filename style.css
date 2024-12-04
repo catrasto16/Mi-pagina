@@ -37,15 +37,8 @@ main {
 
 /* Títulos */
 h1, h2 {
+    color: var(--text-dark)
     text-align: left;
-}
-
-h1 {
-    color: var(--text-light);
-}
-
-h2 {
-    color: var(--text-dark);
 }
 
 /* Menú de navegación */
