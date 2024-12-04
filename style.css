@@ -14,8 +14,9 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: var(--tercer-color);
     margin: 0;
-    padding: 5px;
+    padding: 0px;
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
 main {
     flex: 1;
     max-width: 100%;
-    margin: 20px auto;
+    margin: auto;
     padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
@@ -236,7 +237,7 @@ tr:hover {
 
 /* Estilo de imágenes */
 .imagen-foto {
-    max-width: 100%;
+    width: auto;
     height: auto;
     display: block;
     margin: 0 auto;
