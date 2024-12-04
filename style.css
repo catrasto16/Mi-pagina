@@ -190,7 +190,7 @@ footer {
     border: none;
     border-radius: 5px;
     background-color: var(--secondary-color);
-    color: var(--text-light);
+    color: var(--text-dark);
     transition: background-color 0.3s;
 }
 
@@ -204,10 +204,10 @@ table {
     max-width: 600px;
     margin: 10px auto;
     border-collapse: collapse;
-    background-color: transparent; /* Fonfo transparente */
-    /*border-radius: 10px;*/
+    background-color: #fff; /* Fonfo transparente */
+    border-radius: 10px;
     overflow: hidden;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/ /*sombra del borde*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*sombra del borde*/
     table-layout: auto;
 }
 
