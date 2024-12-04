@@ -78,7 +78,7 @@ nav {
     background: none;
     border: none;
     font-size: 40px;
-    color: var(--text-light);
+    color: var(--text-dark);
     cursor: pointer;
 }
 
