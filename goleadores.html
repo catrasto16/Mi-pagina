@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -46,30 +46,30 @@
     <script>
         // Datos de los goleadores
 	const topScorers = [
-            { nombre: "Juan Tovar", goles: 32 },
-            { nombre: "Jose Gemelo", goles: 30 },
-            { nombre: "Juan Carlos", goles: 29 },
-            { nombre: "Juan López", goles: 28 },
+		{ nombre: "Jose Gemelo", goles: 33 },
+		{ nombre: "Juan Tovar", goles: 32 },
+		{ nombre: "Juan Carlos", goles: 32 },
+        { nombre: "Juan López", goles: 28 },
 	    { nombre: "Floris", goles: 18 },
-            { nombre: "Pedro Gemelo", goles: 17 },
-            { nombre: "Juanma", goles: 16 },
-	    { nombre: "Ortega", goles: 15 },
-            { nombre: "Puro", goles: 13 },
-            { nombre: "Catrasto", goles: 9 },
-            { nombre: "Maño", goles: 5 },
-            { nombre: "Jose Ángel", goles: 4 },
-            { nombre: "Clarico", goles: 3 },
-            { nombre: "Pedrín", goles: 3 },
-            { nombre: "Villegas", goles: 3 },
-            { nombre: "Jesús Maldonado", goles: 2 },
-            { nombre: "Carlos Gámez", goles: 2 },
-            { nombre: "Mateo Maldonado", goles: 2 },
+		{ nombre: "Ortega", goles: 18 },
+    	{ nombre: "Pedro Gemelo", goles: 17 },
+       	{ nombre: "Juanma", goles: 17 },
+		{ nombre: "Puro", goles: 15 },
+		{ nombre: "Maño", goles: 14 },
+        { nombre: "Catrasto", goles: 10 },
+        { nombre: "Jose Ángel", goles: 6 },
+		{ nombre: "Mateo Maldonado", goles: 4 },
+        { nombre: "Clarico", goles: 3 },
+		{ nombre: "Carlos Gámez", goles: 3 },
+        { nombre: "Pedrín", goles: 3 },
+        { nombre: "Villegas", goles: 3 },
+        { nombre: "Jesús Maldonado", goles: 2 },
             // Agrega más goleadores aquí
         ];
 		// Seleccionar el cuerpo de la tabla
         const tableBody = document.querySelector("#scorers-table tbody");
 
-        // Llenar la tabla dinámicamente
+        /* Llenar la tabla dinámicamente
         topScorers.forEach(jugador => {
             const row = document.createElement("tr");
             row.innerHTML = `
