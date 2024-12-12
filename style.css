@@ -87,7 +87,7 @@ nav {
     cursor: pointer;
     background: none;
     border: none;
-    color: red; /* Cambia el color del menu de hamburguesa*/
+    color: black; /* Cambia el color del menu de hamburguesa*/
     display: block; /* Asegura que el menu se muestra*/
     position: absolute;
     right: -30px;
