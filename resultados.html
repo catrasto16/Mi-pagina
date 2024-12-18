@@ -123,24 +123,32 @@
                 jornada: "Jornada 12",
                 fecha: "04/12/2024",
                 arbitro: "Floris",
-                equipoNegro: ["Pedro Gemelo ", "Juan Carlos III", "Maño IIIIIIIII", "Juanma I", "Ortega III", "Clarico"],
+                equipoNegro: ["Pedro Gemelo", "Juan Carlos III", "Maño IIIIIIIII", "Juanma I", "Ortega III", "Clarico"],
                 equipoRojo: ["Jose Ángel II", "Jose Gemelo III", "Puro II", "Mateo II", "Carlos I", "Catrasto I", "Jesus"],
                 resultado: "16 - 11"
-            }
-	    /*{
+            },
+	    {
 		jornada: "Jornada 13",
 		fecha: "11/12/2024",
 		arbitro: "Pedro Gemelo",
-		equipoNegro: ["Mateo", "Floris", "Juan Carlos", "Juan López", "Ortega" ,"Jesús"],
-                equipoRojo: ["Puro", "Maño", "Jose Gemelo", "Juanma", "Carlos", "Catrasto"],
+		equipoNegro: ["Mateo I", "Juan Carlos II", "Floris III", "Juan López III", "Ortega I" ,"Jesús"],
+                equipoRojo: ["Puro I", "Maño", "Jose Gemelo III", "Juanma I", "Carlos I", "Catrasto I"],
                 resultado: "10 - 7"
-	     }*/
+	     },
+	     {
+		jornada: "Jornada 14",
+		fecha: "18/12/2024",
+		arbitro: "Ortega",
+		equipoNegro: ["Jesús I", "Juan Carlos III", "Jose Gemelo IIII", "Puro", "Juanma I" ,"Clarico I"],
+                equipoRojo: ["Catrasto III", "Maño III", "Juanma Palo III", "Juan López IIIIII", "Pedro Gemelo IIII", "Carlos II"],
+                resultado: "10 - 7"
+	     }
 		
 
             // Puedes agregar más partidos aquí
         ];
 		// Añadir +1 para que se vea la ultima jornada jugada //
-        let currentMatchIndex = 12;
+        let currentMatchIndex = 14;
 
         function displayMatch() {
             const match = matches[currentMatchIndex];
