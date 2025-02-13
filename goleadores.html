@@ -8,42 +8,41 @@
 </head>
 <body>
     <!-- Encabezado -->
-    <header>
-        <h1>Llena que nos vamos</h1>
+<header>
+	<h1>Llena que nos vamos</h1>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-		<nav>
-			<ul class="menu">
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="resultados.html">Resultados</a></li>
-				<li><a href="clasificacion.html">Clasificación</a></li>
-				<li><a href="goleadores.html">Goleadores</a></li>
-			</ul>
-		</nav>
-    </header>
-	
-	<main>
-		<!-- Tabla de goleadores -->
-		<h2>Tabla de Goleadores</h2>
-		<table id="scorers-table">
-			<thead>
-				<tr>
-					<th>Jugador</th>
-					<th>Goles</th>
-				</tr>
-			</thead>
-			<tbody>
-				<!-- Los datos de los goleadores se llenarán dinámicamente aquí -->
-			</tbody>
+	<nav>
+		<ul class="menu">
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="resultados.html">Resultados</a></li>
+			<li><a href="clasificacion.html">Clasificación</a></li>
+			<li><a href="goleadores.html">Goleadores</a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<!-- Tabla de goleadores -->
+	<h2>Tabla de Goleadores</h2>
+	<table id="scorers-table">
+		<thead>
+			<tr>
+				<th>Jugador</th>
+				<th>Goles</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- Los datos de los goleadores se llenarán dinámicamente aquí -->
+		</tbody>
 		</table>
-	</main>
+</main>
 	
-	<!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 Llena que nos vamos. Todos los derechos reservados.</p>
-    </footer>
+<!-- Pie de página -->
+<footer>
+	<p>&copy; 2024 Llena que nos vamos. Todos los derechos reservados.</p>
+</footer>
 
-	<!-- Script para llenar dinámicamente la tabla -->
-    <script>
+<!-- Script para llenar dinámicamente la tabla -->
+<script>
         // Datos de los goleadores
 	const topScorers = [
 	{ nombre: "Juan Tovar", goles: 54 },
@@ -67,12 +66,9 @@
 	{ nombre: "Jesús Maldonado", goles: 3 },
         { nombre: "Pedrín", goles: 3 },
         { nombre: "Villegas", goles: 3 },
-	
-	
-	
-        
-            // Agrega más goleadores aquí
+	// Agrega más goleadores aquí
         ];
+	
 	// Seleccionar el cuerpo de la tabla
         const tableBody = document.querySelector("#scorers-table tbody");
 
