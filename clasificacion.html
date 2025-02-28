@@ -22,11 +22,12 @@
 	</header>
 <main>
 <!-- Tabla de clasificación -->
-    <h2>Clasificación</h2>
+    <h2>Clasificación 24/25</h2>
     <table id="clasi-table">
         <thead>
             <tr>
-                <th>Jugador</th>
+                <th>Posición</th>
+		<th>Jugador</th>
                 <th>Puntos</th>
                 <th>PG</th>
                 <th>PE</th>
@@ -42,27 +43,27 @@
 <!-- Script paraa llenar la tabla dinamicamente -->
 <script>
 	const topClasi = [
-	{ nombre: "Pedro Gemelo", puntos: 33, PG: 11, PE: 0, PP: 4, amarillas: 2 },
-	{ nombre: "Juan Tovar", puntos: 31, PG: 10, PE: 1, PP: 4, amarillas: 1 },
-	{ nombre: "Catrasto", puntos: 31, PG: 10, PE: 1, PP: 7, amarillas: 0 },
-	{ nombre: "Juanma", puntos: 31, PG: 10, PE: 1, PP: 8, amarillas: 2 },
-	{ nombre: "Floris", puntos: 30, PG: 10, PE: 0, PP: 4, amarillas: 1 },
-	{ nombre: "Juan López", puntos: 25, PG: 8, PE: 1, PP: 5, amarillas: 0 },
-	{ nombre: "Juan Carlos", puntos: 22, PG: 7, PE: 1, PP: 11, amarillas: 0 },
-	{ nombre: "Maño", puntos: 19, PG: 6, PE: 1, PP: 7, amarillas: 0 },
-	{ nombre: "Jose Gemelo", puntos: 19, PG: 6, PE: 1, PP: 10, amarillas: 0 },
-	{ nombre: "Ortega", puntos: 18, PG: 6, PE: 0, PP: 7, amarillas: 3 },
-	{ nombre: "Clarico", puntos: 16, PG: 5, PE: 1, PP: 6, amarillas: 0 },
-	{ nombre: "Puro", puntos: 15, PG: 5, PE: 0, PP: 11, amarillas: 2 },
-        { nombre: "Mateo Maldonado", puntos: 12, PG: 4, PE: 0, PP: 1, amarillas: 0 },
-	{ nombre: "Jose Ángel", puntos: 12, PG: 4, PE: 0, PP: 6, amarillas: 2 },
-	{ nombre: "Jesús Maldonado", puntos: 10, PG: 3, PE: 1, PP: 10, amarillas: 1 },
-	{ nombre: "Alex Laguna", puntos: 7, PG: 2, PE: 1, PP: 2, amarillas: 0},
-	{ nombre: "Carlos Gamez", puntos: 7, PG: 2, PE: 1, PP: 3, amarillas: 0 },
-	{ nombre: "Juanma Palo", puntos: 7, PG: 2, PE: 1, PP: 4, amarillas: 0},
-	{ nombre: "M.Castilla", puntos: 6, PG: 2, PE: 0, PP: 0, amarillas: 0},
-	{ nombre: "Villegas", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 },
-        { nombre: "Pedrín", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 }
+	{ posicion: 1, nombre: "Pedro Gemelo", puntos: 33, PG: 11, PE: 0, PP: 4, amarillas: 2 },
+	{ posicion: 2, nombre: "Juan Tovar", puntos: 31, PG: 10, PE: 1, PP: 4, amarillas: 1 },
+	{ posicion: 3, nombre: "Catrasto", puntos: 31, PG: 10, PE: 1, PP: 7, amarillas: 0 },
+	{ posicion: 4, nombre: "Juanma", puntos: 31, PG: 10, PE: 1, PP: 8, amarillas: 2 },
+	{ posicion: 5, nombre: "Floris", puntos: 30, PG: 10, PE: 0, PP: 4, amarillas: 1 },
+	{ posicion: 6, nombre: "Juan López", puntos: 25, PG: 8, PE: 1, PP: 5, amarillas: 0 },
+	{ posicion: 7, nombre: "Juan Carlos", puntos: 22, PG: 7, PE: 1, PP: 11, amarillas: 0 },
+	{ posicion: 8, nombre: "Maño", puntos: 19, PG: 6, PE: 1, PP: 7, amarillas: 0 },
+	{ posicion: 9, nombre: "Jose Gemelo", puntos: 19, PG: 6, PE: 1, PP: 10, amarillas: 0 },
+	{ posicion: 10, nombre: "Ortega", puntos: 18, PG: 6, PE: 0, PP: 7, amarillas: 3 },
+	{ posicion: 11, nombre: "Clarico", puntos: 16, PG: 5, PE: 1, PP: 6, amarillas: 0 },
+	{ posicion: 12, nombre: "Puro", puntos: 15, PG: 5, PE: 0, PP: 11, amarillas: 2 },
+        { posicion: 13, nombre: "Mateo Maldonado", puntos: 12, PG: 4, PE: 0, PP: 1, amarillas: 0 },
+	{ posicion: 14, nombre: "Jose Ángel", puntos: 12, PG: 4, PE: 0, PP: 6, amarillas: 2 },
+	{ posicion: 15, nombre: "Jesús Maldonado", puntos: 10, PG: 3, PE: 1, PP: 10, amarillas: 1 },
+	{ posicion: 16, nombre: "Alex Laguna", puntos: 7, PG: 2, PE: 1, PP: 2, amarillas: 0},
+	{ posicion: 17, nombre: "Carlos Gamez", puntos: 7, PG: 2, PE: 1, PP: 3, amarillas: 0 },
+	{ posicion: 18, nombre: "Juanma Palo", puntos: 7, PG: 2, PE: 1, PP: 4, amarillas: 0},
+	{ posicion: 19, nombre: "M.Castilla", puntos: 6, PG: 2, PE: 0, PP: 0, amarillas: 0},
+	{ posicion: 21, nombre: "Villegas", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 },
+        { posicion: 22, nombre: "Pedrín", puntos: 3, PG: 1, PE: 0, PP: 1, amarillas: 0 }
 	];
 	
 	const tableBody = document.querySelector("#clasi-table tbody");
@@ -70,7 +71,8 @@
 	topClasi.forEach(jugador => {
 	const row = document.createElement("tr");
 	row.innerHTML = `
-		<td>${jugador.nombre}</td>
+		<td>${jugador.posicion}</td>
+  		<td>${jugador.nombre}</td>
                 <td>${jugador.puntos}</td>
                 <td>${jugador.PG}</td>
                 <td>${jugador.PE}</td>
