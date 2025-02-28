@@ -27,7 +27,7 @@ body {
 main {
     flex: 1;
     max-width: 800px;
-    min-height: 3000px;
+    min-height: 300px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
