@@ -207,10 +207,10 @@ a:focus, button:focus {
 table {
     width: 100%;
     max-width: 600px;
-    margin: 10px auto;
+    margin: 9px auto;
     border-collapse: collapse;
     background-color: #fff; /* Fonfo transparente */
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*sombra del borde*/
     table-layout: auto;
