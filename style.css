@@ -166,7 +166,7 @@ nav {
 /* Estilos para el footer y botones */
 footer {
     background-color: var(--tercer-color);
-    color: var(--text-light);
+    color: var(--text-dark);
     text-align: center;
     padding: 15px 10px;
     width: 100%;
@@ -207,7 +207,7 @@ a:focus, button:focus {
 table {
     width: 100%;
     max-width: 600px;
-    margin: 8px auto;
+    margin: 6px auto;
     border-collapse: collapse;
     background-color: #fff; /* Fonfo transparente */
     border-radius: 8px;
@@ -217,10 +217,10 @@ table {
 }
 
 th, td {
-    padding: 8px 8px;
+    padding: 6px 6px;
     text-align: center;
     border-bottom: 1px solid #ddd;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 th {
