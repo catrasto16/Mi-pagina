@@ -26,6 +26,7 @@
 	<table id="scorers-table">
 		<thead>
 			<tr>
+				<th>Pos</th>
 				<th>Jugador</th>
 				<th>Goles</th>
 			</tr>
@@ -45,27 +46,27 @@
 <script>
         // Datos de los goleadores
 	const topScorers = [
-	{ nombre: "Juan Tovar", goles: 61 },
-	{ nombre: "Juan Carlos", goles: 50 },
-	{ nombre: "Jose Gemelo", goles: 49 },
-	{ nombre: "Juan López", goles: 46 },
-	{ nombre: "Juanma", goles: 33 },
-	{ nombre: "Pedro Gemelo", goles: 28 },
-	{ nombre: "Floris", goles: 28 },
-	{ nombre: "Puro", goles: 24 },
-	{ nombre: "Maño", goles: 22 },
-	{ nombre: "Juanma Palo", goles: 21 },
-	{ nombre: "Ortega", goles: 19 },
-        { nombre: "Catrasto", goles: 18 },
-	{ nombre: "Alex Laguna", goles: 12 },
-	{ nombre: "Clarico", goles: 11 },
-	{ nombre: "Jose Ángel", goles: 11 },
-	{ nombre: "Mateo Maldonado", goles: 6 },
-	{ nombre: "Carlos Gámez", goles: 6 },
-	{ nombre: "Manolo Castilla", goles: 3 },
-	{ nombre: "Jesús Maldonado", goles: 3 },
-        { nombre: "Pedrín", goles: 3 },
-        { nombre: "Villegas", goles: 3 },
+	{ posicion: 1, nombre: "Juan Tovar", goles: 61 },
+	{ posicion: 2, nombre: "Juan Carlos", goles: 50 },
+	{ posicion: 3, nombre: "Jose Gemelo", goles: 49 },
+	{ posicion: 4, nombre: "Juan López", goles: 46 },
+	{ posicion: 5, nombre: "Juanma", goles: 33 },
+	{ posicion: 6, nombre: "Pedro Gemelo", goles: 28 },
+	{ posicion: 7, nombre: "Floris", goles: 28 },
+	{ posicion: 8, nombre: "Puro", goles: 24 },
+	{ posicion: 9, nombre: "Maño", goles: 22 },
+	{ posicion: 10, nombre: "Juanma Palo", goles: 21 },
+	{ posicion: 11, nombre: "Ortega", goles: 19 },
+    	{ posicion: 12, nombre: "Catrasto", goles: 18 },
+	{ posicion: 13, nombre: "Alex Laguna", goles: 12 },
+	{ posicion: 14, nombre: "Clarico", goles: 11 },
+	{ posicion: 15, nombre: "Jose Ángel", goles: 11 },
+	{ posicion: 16, nombre: "Mateo Maldonado", goles: 6 },
+	{ posicion: 17, nombre: "Carlos Gámez", goles: 6 },
+	{ posicion: 18, nombre: "Manolo Castilla", goles: 3 },
+	{ posicion: 19, nombre: "Jesús Maldonado", goles: 3 },
+    	{ posicion: 20, nombre: "Pedrín", goles: 3 },
+    	{ posicion: 21, nombre: "Villegas", goles: 3 },
 	// Agrega más goleadores aquí
         ];
 	
@@ -76,7 +77,8 @@
         topScorers.forEach(jugador => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${jugador.nombre}</td>
+                <td>${jugador.posicion}</td>
+		<td>${jugador.nombre}</td>
                 <td>${jugador.goles}</td>
             `;
             tableBody.appendChild(row);
