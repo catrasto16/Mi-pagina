@@ -211,7 +211,7 @@ table {
     margin: 6px auto;
     border-collapse: collapse;
     background-color: #fff; /* Fonfo transparente */
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*sombra del borde*/
     table-layout: auto;
