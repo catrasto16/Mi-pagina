@@ -207,7 +207,7 @@ a:focus, button:focus {
 table {
     width: 100%;
     max-width: 600px;
-    margin: 9px auto;
+    margin: 8px auto;
     border-collapse: collapse;
     background-color: #fff; /* Fonfo transparente */
     border-radius: 8px;
@@ -217,7 +217,7 @@ table {
 }
 
 th, td {
-    padding: 8px 10px;
+    padding: 8px 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     font-size: 0.9em;
