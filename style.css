@@ -208,7 +208,7 @@ table {
     width: 100%;
     max-width: 600px;
     margin: 6px auto;
-    /*border-collapse: collapse;*/
+    border-collapse: collapse;
     background-color: #fff; /* Fonfo transparente */
     border-radius: 8px;
     overflow: hidden;
