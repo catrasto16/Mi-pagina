@@ -27,6 +27,7 @@ body {
 main {
     flex: 1;
     max-width: 800px;
+    min-height: 400px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
