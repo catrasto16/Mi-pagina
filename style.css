@@ -14,7 +14,7 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: var(--tercer-color);
     margin: 0;
-    padding: 2px;
+    padding: 6px;
     height: 100%;
 }
 
@@ -32,12 +32,12 @@ main {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Títulos */
 h1, h2 {
-    color: var(--text-dark)
+    color: var(--text-dark);
     text-align: left;
 }
 
@@ -217,7 +217,7 @@ table {
 }
 
 th, td {
-    padding: 4px 4px;
+    padding: 6px 6px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     font-size: 0.9em;
