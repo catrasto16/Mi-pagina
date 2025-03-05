@@ -39,7 +39,7 @@ main {
 /* Títulos */
 h1, h2 {
     color: var(--text-dark);
-    text-align: left;
+    text-align: center;
 }
 
 /* Menú de navegación */
